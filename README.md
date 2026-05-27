@@ -1,259 +1,145 @@
-[MEGA DELIVERY - Contatos.html](https://github.com/user-attachments/files/28289246/MEGA.DELIVERY.-.Contatos.html)
+[blackbox-output-code-SXY7QEPXLG.html](https://github.com/user-attachments/files/28289471/blackbox-output-code-SXY7QEPXLG.html)
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEGA DELIVERY - Contatos</title>
+    <title>MEGA DELIVERY - Admin</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: #1a1a1a;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 2em;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 3px 3px 0 #ffd700;
-        }
-
-        h1 span {
-            color: #ffd700;
-        }
-
-        .subtitle {
-            color: #888888;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        /* Lista de Estabelecimentos */
-        .establishments-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .establishment-card {
-            background: #2d2d2d;
-            border-radius: 15px;
-            padding: 20px;
-            border: 2px solid #404040;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.3s ease;
-        }
-
-        .establishment-card:hover {
-            border-color: #0047ab;
-            transform: scale(1.02);
-            transition: all 0.3s;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .establishment-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #0047ab;
-        }
-
-        .establishment-name {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .category {
-            background: #0047ab;
-            color: #ffffff;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.75em;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .contact-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .contact-btn {
-            flex: 1;
-            min-width: 120px;
-            padding: 15px 12px;
-            border: none;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: transform 0.2s;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .contact-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .btn-phone {
-            background: #0047ab;
-            color: white;
-        }
-
-        .btn-whatsapp {
-            background: #25d366;
-            color: white;
-        }
-
-        .btn-email {
-            background: #ffd700;
-            color: #000000;
-        }
-
-        .btn-address {
-            background: #ff6b6b;
-            color: white;
-        }
-
-        .no-establishments {
-            text-align: center;
-            color: #888888;
-            font-size: 1.2em;
-            padding: 40px;
-        }
-
-        .emoji {
-            font-size: 1.3em;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #666666;
-            font-size: 0.9em;
-        }
-
-        .footer a {
-            color: #0047ab;
-            text-decoration: none;
-        }
-
-        /* Loading */
-        .loading {
-            text-align: center;
-            color: #ffd700;
-            font-size: 1.2em;
-            padding: 40px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #1a1a1a; min-height: 100vh; padding: 15px; }
+        .container { max-width: 500px; margin: 0 auto; }
+        h1 { color: #fff; text-align: center; margin-bottom: 20px; font-size: 1.6em; text-shadow: 2px 2px 0 #ffd700; }
+        h1 span { color: #ffd700; }
+        .badge { background: #ff4757; color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 0.7em; display: inline-block; margin-bottom: 10px; }
+        .card { background: #2d2d2d; border-radius: 12px; padding: 20px; border: 2px solid #0047ab; margin-bottom: 20px; }
+        .card h2 { color: #ffd700; margin-bottom: 15px; font-size: 1.1em; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; color: #ccc; margin-bottom: 5px; font-weight: 600; font-size: 0.9em; }
+        .form-group input { width: 100%; padding: 12px; border: 2px solid #404040; border-radius: 8px; font-size: 14px; background: #1a1a1a; color: #fff; }
+        .form-group input:focus { outline: none; border-color: #0047ab; }
+        .image-preview { width: 100%; height: 150px; background: #1a1a1a; border-radius: 8px; border: 2px dashed #404040; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; overflow: hidden; cursor: pointer; }
+        .image-preview img { width: 100%; height: 100%; object-fit: cover; }
+        .image-preview span { color: #666; }
+        .btn { width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 1em; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        .btn-add { background: linear-gradient(135deg, #ffd700, #ffb700); color: #000; }
+        .lista { margin-top: 20px; }
+        .item { background: #2d2d2d; border-radius: 10px; padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 12px; border: 1px solid #404040; }
+        .item img { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; }
+        .item-info { flex: 1; }
+        .item-info h3 { color: #fff; font-size: 1em; }
+        .item-info p { color: #888; font-size: 0.85em; }
+        .btn-excluir { background: #ff4757; color: #fff; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; }
+        .msg { text-align: center; padding: 10px; border-radius: 8px; margin-bottom: 10px; display: none; }
+        .msg-sucesso { background: #25d366; color: #fff; }
+        .msg-erro { background: #ff4757; color: #fff; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>MEGA <span>DELIVERY</span></h1>
-        <p class="subtitle">📞 Escolha um estabelecimento e entre em contato</p>
+        <div style="text-align: center;"><span class="badge">🔧 MODO ADMIN</span></div>
+        <h1>🛵 MEGA <span>DELIVERY</span></h1>
+        
+        <div id="msg" class="msg"></div>
 
-        <!-- Lista de Estabelecimentos -->
-        <div id="listaEstabelecimentos" class="establishments-list">
-            <div class="loading">⏳ Carregando contatos...</div>
+        <div class="card">
+            <h2>➕ Adicionar Estabelecimento</h2>
+            <div class="form-group">
+                <label>Foto</label>
+                <div class="image-preview" id="preview" onclick="document.getElementById('foto').click()">
+                    <span>Clique para adicionar foto</span>
+                </div>
+                <input type="file" id="foto" accept="image/*" style="display: none;" onchange="previewImage()">
+            </div>
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" id="nome" value="Doralice pasteis" placeholder="Ex: Lanches Mega">
+            </div>
+            <div class="form-group">
+                <label>📞 Telefone</label>
+                <input type="tel" id="telefone" value="(63) 9929-4772" placeholder="(11) 99999-9999">
+            </div>
+            <div class="form-group">
+                <label>💬 WhatsApp</label>
+                <input type="tel" id="whatsapp" value="556399294772" placeholder="5511999999999">
+            </div>
+            <div class="form-group">
+                <label>📧 Email</label>
+                <input type="email" id="email" placeholder="contato@email.com">
+            </div>
+            <div class="form-group">
+                <label>📍 Endereço</label>
+                <input type="text" id="endereco" placeholder="Rua exemplo, 123">
+            </div>
+            <button class="btn btn-add" onclick="adicionar()">✅ Adicionar</button>
         </div>
 
-        <div class="footer">
-            <p>🛵 MEGA DELIVERY - Sua entrega preferida</p>
+        <div class="card">
+            <h2>📋 Cadastrados</h2>
+            <div id="lista"></div>
         </div>
     </div>
 
-    <script>
-        let estabelecimentos = [];
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+        import { getDatabase, ref, set, onValue, remove } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js";
 
-        // Carregar do localStorage
-        function carregarEstabelecimentos() {
-            const salvos = localStorage.getItem('estabelecimentos');
-            if (salvos) {
-                estabelecimentos = JSON.parse(salvos);
+        const firebaseConfig = {
+            apiKey: "AIzaSyB-UQnZzky1OuBG2XuCwJ_vCrX0pWnM1tk",
+            authDomain: "mega-delivery-49d6b.firebaseapp.com",
+            projectId: "mega-delivery-49d6b",
+            storageBucket: "mega-delivery-49d6b.firebasestorage.app",
+            messagingSenderId: "1060401627051",
+            appId: "1:1060401627051:web:261f9d0f01e8b0b2e81cee"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        let imagemBase64 = '';
+
+        window.previewImage = function() {
+            const input = document.getElementById('foto');
+            const preview = document.getElementById('preview');
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagemBase64 = e.target.result;
+                    preview.innerHTML = `<img src="${e.target.result}">`;
+                };
+                reader.readAsDataURL(input.files[0]);
             }
-            renderizarEstabelecimentos();
-        }
+        };
 
-        function renderizarEstabelecimentos() {
-            const lista = document.getElementById('listaEstabelecimentos');
-            
-            if (estabelecimentos.length === 0) {
-                lista.innerHTML = '<div class="no-establishments">📭 Nenhum estabelecimento disponível no momento.</div>';
+        window.adicionar = function() {
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const email = document.getElementById('email').value;
+            const endereco = document.getElementById('endereco').value;
+
+            if (!nome) {
+                mostrarMsg('Digite o nome!', 'erro');
                 return;
             }
 
-            lista.innerHTML = estabelecimentos.map(est => `
-                <div class="establishment-card">
-                    <div class="establishment-header">
-                        <span class="establishment-name">🏪 ${est.nome}</span>
-                    </div>
-                    <div class="contact-buttons">
-                        ${est.telefone ? `
-                            <a href="tel:${est.telefone.replace(/[^0-9]/g, '')}" class="contact-btn btn-phone">
-                                <span class="emoji">📞</span> Ligar
-                            </a>
-                        ` : ''}
-                        ${est.whatsapp ? `
-                            <a href="https://wa.me/${est.whatsapp.replace(/[^0-9]/g, '')}?text=Olá%20gostaria%20de%20fazer%20um%20pedido!" target="_blank" class="contact-btn btn-whatsapp">
-                                <span class="emoji">💬</span> WhatsApp
-                            </a>
-                        ` : ''}
-                        ${est.email ? `
-                            <a href="mailto:${est.email}" class="contact-btn btn-email">
-                                <span class="emoji">📧</span> Email
-                            </a>
-                        ` : ''}
-                        ${est.endereco ? `
-                            <a href="https://www.google.com/maps/search/${encodeURIComponent(est.endereco)}" target="_blank" class="contact-btn btn-address">
-                                <span class="emoji">📍</span> Ver Mapa
-                            </a>
-                        ` : ''}
-                    </div>
-                </div>
-            `).join('');
-        }
+            const id = Date.now();
+            const novo = { id, foto: imagemBase64, nome, telefone, whatsapp, email, endereco };
 
-        // Iniciar
-        carregarEstabelecimentos();
-    </script>
-</body>
-</html>
+            set(ref(db, 'estabelecimentos/' + id), novo).then(() => {
+                mostrarMsg('Adicionado com sucesso!', 'sucesso');
+                document.getElementById('nome').value = '';
+                document.getElementById('telefone').value = '';
+                document.getElementById('whatsapp').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('endereco').value = '';
+                document.getElementById('preview').innerHTML = '<span>Clique para adicionar foto</span>';
+                imagemBase64 = '';
+            }).catch(() => {
+                mostrarMsg('Erro ao adicionar!', 'erro');
+            });
+        };
+
+        window.excluir = function(id) {
+            if (confirm('Excluir?')) {
+                remove(ref(db, 'estabelecimentos/' + id));
