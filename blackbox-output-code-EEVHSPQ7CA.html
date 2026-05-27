@@ -2,76 +2,257 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MEGA DELIVERY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGA DELIVERY - Contatos</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #1a1a1a; min-height: 100vh; padding: 15px; }
-        .header { text-align: center; margin-bottom: 20px; }
-        .status { display: inline-flex; align-items: center; gap: 6px; background: #25d366; color: #fff; padding: 6px 12px; border-radius: 20px; font-size: 0.75em; margin-bottom: 10px; }
-        .status-dot { width: 8px; height: 8px; background: #fff; border-radius: 50%; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-        h1 { color: #fff; font-size: 1.6em; text-shadow: 2px 2px 0 #ffd700; }
-        h1 span { color: #ffd700; }
-        .subtitle { color: #888; margin-bottom: 20px; font-size: 0.9em; }
-        .estabelecimento { background: #2d2d2d; border-radius: 15px; margin-bottom: 20px; overflow: hidden; border: 2px solid #404040; }
-        .estabelecimento:hover { border-color: #0047ab; }
-        .estabelecimento img { width: 100%; height: 180px; object-fit: cover; }
-        .estabelecimento-info { padding: 15px; }
-        .estabelecimento-nome { color: #fff; font-size: 1.3em; font-weight: bold; margin-bottom: 15px; }
-        .botoes { display: flex; flex-direction: column; gap: 10px; }
-        .botao { width: 100%; padding: 16px; border: none; border-radius: 10px; font-size: 1em; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; text-transform: uppercase; }
-        .botao:active { transform: scale(0.98); }
-        .btn-whatsapp { background: #25d366; color: #fff; }
-        .btn-ligar { background: #0047ab; color: #fff; }
-        .btn-email { background: #ffd700; color: #000; }
-        .btn-mapa { background: #ff6b6b; color: #fff; }
-        .emoji { font-size: 1.3em; }
-        .footer { text-align: center; margin-top: 30px; color: #666; font-size: 0.8em; }
-        .loading { text-align: center; color: #888; padding: 40px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 0 #ffd700;
+        }
+
+        h1 span {
+            color: #ffd700;
+        }
+
+        .subtitle {
+            color: #888888;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        /* Lista de Estabelecimentos */
+        .establishments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .establishment-card {
+            background: #2d2d2d;
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid #404040;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        .establishment-card:hover {
+            border-color: #0047ab;
+            transform: scale(1.02);
+            transition: all 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .establishment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #0047ab;
+        }
+
+        .establishment-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .category {
+            background: #0047ab;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 15px 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.2s;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-phone {
+            background: #0047ab;
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .btn-email {
+            background: #ffd700;
+            color: #000000;
+        }
+
+        .btn-address {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .no-establishments {
+            text-align: center;
+            color: #888888;
+            font-size: 1.2em;
+            padding: 40px;
+        }
+
+        .emoji {
+            font-size: 1.3em;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666666;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #0047ab;
+            text-decoration: none;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            color: #ffd700;
+            font-size: 1.2em;
+            padding: 40px;
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="status"><div class="status-dot"></div>ONLINE</div>
-        <h1>🛵 MEGA <span>DELIVERY</span></h1>
-        <p class="subtitle">Escolha um estabelecimento abaixo</p>
+    <div class="container">
+        <h1>MEGA <span>DELIVERY</span></h1>
+        <p class="subtitle">📞 Escolha um estabelecimento e entre em contato</p>
+
+        <!-- Lista de Estabelecimentos -->
+        <div id="listaEstabelecimentos" class="establishments-list">
+            <div class="loading">⏳ Carregando contatos...</div>
+        </div>
+
+        <div class="footer">
+            <p>🛵 MEGA DELIVERY - Sua entrega preferida</p>
+        </div>
     </div>
 
-    <div id="lista"></div>
+    <script>
+        let estabelecimentos = [];
 
-    <div class="footer"><p>📞 Atendimento rápido</p></div>
+        // Carregar do localStorage
+        function carregarEstabelecimentos() {
+            const salvos = localStorage.getItem('estabelecimentos');
+            if (salvos) {
+                estabelecimentos = JSON.parse(salvos);
+            }
+            renderizarEstabelecimentos();
+        }
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyB-UQnZzky1OuBG2XuCwJ_vCrX0pWnM1tk",
-            authDomain: "mega-delivery-49d6b.firebaseapp.com",
-            projectId: "mega-delivery-49d6b",
-            storageBucket: "mega-delivery-49d6b.firebasestorage.app",
-            messagingSenderId: "1060401627051",
-            appId: "1:1060401627051:web:261f9d0f01e8b0b2e81cee"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-
-        const semFoto = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22180%22><rect fill=%22%23404040%22 width=%22300%22 height=%22180%22/><text fill=%22%23666666%22 x=%22150%22 y=%22100%22 text-anchor=%22middle%22>Sem foto</text></svg>';
-
-        onValue(ref(db, 'estabelecimentos'), (snapshot) => {
-            const lista = document.getElementById('lista');
-            const dados = snapshot.val();
-            if (!dados) {
-                lista.innerHTML = '<div class="loading">📭 Nenhum estabelecimento disponível</div>';
+        function renderizarEstabelecimentos() {
+            const lista = document.getElementById('listaEstabelecimentos');
+            
+            if (estabelecimentos.length === 0) {
+                lista.innerHTML = '<div class="no-establishments">📭 Nenhum estabelecimento disponível no momento.</div>';
                 return;
             }
-            const arr = Object.values(dados);
-            lista.innerHTML = arr.map(est => `
-                <div class="estabelecimento">
-                    <img src="${est.foto || semFoto}" alt="${est.nome}">
-                    <div class="estabelecimento-info">
-                        <div class="estabelecimento-nome">🏪 ${est.nome}</div>
-                        <div class="botoes">
-                            ${est.whatsapp ? `<a href="https://wa.me/${est.whatsapp.replace(/[^0-9]/g,'')}?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" class="bota
+
+            lista.innerHTML = estabelecimentos.map(est => `
+                <div class="establishment-card">
+                    <div class="establishment-header">
+                        <span class="establishment-name">🏪 ${est.nome}</span>
+                    </div>
+                    <div class="contact-buttons">
+                        ${est.telefone ? `
+                            <a href="tel:${est.telefone.replace(/[^0-9]/g, '')}" class="contact-btn btn-phone">
+                                <span class="emoji">📞</span> Ligar
+                            </a>
+                        ` : ''}
+                        ${est.whatsapp ? `
+                            <a href="https://wa.me/${est.whatsapp.replace(/[^0-9]/g, '')}?text=Olá%20gostaria%20de%20fazer%20um%20pedido!" target="_blank" class="contact-btn btn-whatsapp">
+                                <span class="emoji">💬</span> WhatsApp
+                            </a>
+                        ` : ''}
+                        ${est.email ? `
+                            <a href="mailto:${est.email}" class="contact-btn btn-email">
+                                <span class="emoji">📧</span> Email
+                            </a>
+                        ` : ''}
+                        ${est.endereco ? `
+                            <a href="https://www.google.com/maps/search/${encodeURIComponent(est.endereco)}" target="_blank" class="contact-btn btn-address">
+                                <span class="emoji">📍</span> Ver Mapa
+                            </a>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Iniciar
+        carregarEstabelecimentos();
+    </script>
+</body>
+</html>
