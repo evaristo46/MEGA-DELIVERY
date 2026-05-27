@@ -1,1 +1,259 @@
-# MEGA-DELIVERY
+[MEGA DELIVERY - Contatos.html](https://github.com/user-attachments/files/28289246/MEGA.DELIVERY.-.Contatos.html)
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGA DELIVERY - Contatos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 0 #ffd700;
+        }
+
+        h1 span {
+            color: #ffd700;
+        }
+
+        .subtitle {
+            color: #888888;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        /* Lista de Estabelecimentos */
+        .establishments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .establishment-card {
+            background: #2d2d2d;
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid #404040;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+        }
+
+        .establishment-card:hover {
+            border-color: #0047ab;
+            transform: scale(1.02);
+            transition: all 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .establishment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #0047ab;
+        }
+
+        .establishment-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .category {
+            background: #0047ab;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 15px 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: transform 0.2s;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-phone {
+            background: #0047ab;
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .btn-email {
+            background: #ffd700;
+            color: #000000;
+        }
+
+        .btn-address {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .no-establishments {
+            text-align: center;
+            color: #888888;
+            font-size: 1.2em;
+            padding: 40px;
+        }
+
+        .emoji {
+            font-size: 1.3em;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666666;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #0047ab;
+            text-decoration: none;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            color: #ffd700;
+            font-size: 1.2em;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MEGA <span>DELIVERY</span></h1>
+        <p class="subtitle">📞 Escolha um estabelecimento e entre em contato</p>
+
+        <!-- Lista de Estabelecimentos -->
+        <div id="listaEstabelecimentos" class="establishments-list">
+            <div class="loading">⏳ Carregando contatos...</div>
+        </div>
+
+        <div class="footer">
+            <p>🛵 MEGA DELIVERY - Sua entrega preferida</p>
+        </div>
+    </div>
+
+    <script>
+        let estabelecimentos = [];
+
+        // Carregar do localStorage
+        function carregarEstabelecimentos() {
+            const salvos = localStorage.getItem('estabelecimentos');
+            if (salvos) {
+                estabelecimentos = JSON.parse(salvos);
+            }
+            renderizarEstabelecimentos();
+        }
+
+        function renderizarEstabelecimentos() {
+            const lista = document.getElementById('listaEstabelecimentos');
+            
+            if (estabelecimentos.length === 0) {
+                lista.innerHTML = '<div class="no-establishments">📭 Nenhum estabelecimento disponível no momento.</div>';
+                return;
+            }
+
+            lista.innerHTML = estabelecimentos.map(est => `
+                <div class="establishment-card">
+                    <div class="establishment-header">
+                        <span class="establishment-name">🏪 ${est.nome}</span>
+                    </div>
+                    <div class="contact-buttons">
+                        ${est.telefone ? `
+                            <a href="tel:${est.telefone.replace(/[^0-9]/g, '')}" class="contact-btn btn-phone">
+                                <span class="emoji">📞</span> Ligar
+                            </a>
+                        ` : ''}
+                        ${est.whatsapp ? `
+                            <a href="https://wa.me/${est.whatsapp.replace(/[^0-9]/g, '')}?text=Olá%20gostaria%20de%20fazer%20um%20pedido!" target="_blank" class="contact-btn btn-whatsapp">
+                                <span class="emoji">💬</span> WhatsApp
+                            </a>
+                        ` : ''}
+                        ${est.email ? `
+                            <a href="mailto:${est.email}" class="contact-btn btn-email">
+                                <span class="emoji">📧</span> Email
+                            </a>
+                        ` : ''}
+                        ${est.endereco ? `
+                            <a href="https://www.google.com/maps/search/${encodeURIComponent(est.endereco)}" target="_blank" class="contact-btn btn-address">
+                                <span class="emoji">📍</span> Ver Mapa
+                            </a>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Iniciar
+        carregarEstabelecimentos();
+    </script>
+</body>
+</html>
